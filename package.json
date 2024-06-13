@@ -1,0 +1,22 @@
+{
+  "name": "contact-form-main",
+  "version": "1.0.0",
+  "description": "![Design preview for the Contact form coding challenge](./design/desktop-preview.jpg)",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hectrhcc/contact-form-main.git"
+  },
+  "author": "hectrhcc",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hectrhcc/contact-form-main/issues"
+  },
+  "homepage": "https://github.com/hectrhcc/contact-form-main#readme",
+  "devDependencies": {
+    "tailwindcss": "^3.4.4"
+  }
+}
