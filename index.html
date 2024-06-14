@@ -9,6 +9,9 @@
 
   <title>Frontend Mentor | Contact form</title>
   <style>
+    body{
+      font-family: 'Karla', sans-serif;
+    }
     .attribution { font-size: 11px; text-align: center; }
     .attribution a { color: hsl(228, 45%, 44%); }
 
@@ -18,8 +21,6 @@
   
     }
  
-   
-
 .asterisco{
   color:hsl(186, 25%, 41%);
   margin-left:0.3rem;
@@ -45,7 +46,7 @@
 
 
 
-@media (min-width:390px) and (max-width:600px){
+@media (min-width:375px) and (max-width:600px){
   .nombre{
     padding-left: 1rem;
     width: 94%;
@@ -71,6 +72,14 @@
     padding-bottom:13.2rem;
     padding-left: 1rem;
     padding-top: 1rem;
+  }
+  .submit{
+    padding:1rem;
+    position: relative;
+    right:0.6rem;
+    width:94% ;
+    margin: 1.7rem auto;
+    cursor:pointer;
   }
 }
 
@@ -111,6 +120,14 @@
     position: relative;
     left:-9.9rem;
     top:-0.05rem;
+    cursor:pointer;
+  }
+  .submit{
+    padding:1rem;
+    position: relative;
+    right:0.6rem;
+    width:94% ;
+    margin: 1.7rem auto;
     cursor:pointer;
   }
 }
@@ -190,45 +207,47 @@
 </head>
 <body class="bg-Green-lighter lg:flex lg:justify-center lg:items-center">
 <form class="form rounded-lg relative pt-4 pb-1 pl-6 ml-4 mr-4 mt-6 bg-White mx-auto text-center">
-  <h2 class="text-3xl font-medium text-left pb-6 text-gray-800">Contact Us</h2>
+  <h2 class="text-3xl font-semibold text-left pb-6 text-gray-800">Contact Us</h2>
   <div class="contenedor lg:visible lg:flex lg:justify-center lg:items-center">
   <div class="first">
-  <label for="firstname" class="block text-base text-left mb-2 text-gray-600 font-medium">First Name  <span class="asterisco">*</span></label>
-  <input type="text"  id="firstname" name="firstname" class="nombre py-3 rounded-lg block bg-White border border-Grey-medium border-solid border-1"/>
-    <p class="text-Red hidden">This field is required</p>
+  <label for="firstname" class="block text-base text-left mb-2 text-gray-600 font-semibold">First Name  <span class="asterisco">*</span></label>
+  <input type="text"  id="firstname" name="firstname" class="nombre mb-2 py-3 rounded-lg block bg-White border border-Grey-medium border-solid border-1"/>
+    <p id="px" class="hidden  mb-4  mt-2">&nbsp;</p>   
+    <p id="pf1" class="text-left mb-4  mt-2 text-Red hidden">This field is required</p>
   </div>
   <div class="second">
-  <label for="lastname" class=" text-base block text-left mb-2 text-gray-600 font-medium">Last Name  <span class="asterisco">*</span></label>
-  <input type="text" id="lastname" name="lastname" class="apellido py-3   rounded-lg block bg-White border border-Grey-medium border-solid border-1"/>
-    <p class="text-Red hidden">This field is required</p>
+  <label for="lastname" class=" text-base block text-left mb-2 text-gray-600 font-semibold">Last Name  <span class="asterisco">*</span></label>
+  <input type="text" id="lastname" name="lastname" class="apellido py-3 mb-2  rounded-lg block bg-White border border-Grey-medium border-solid border-1"/>
+  <p id="pf0" class="hidden  mb-4  mt-2">&nbsp;</p> 
+  <p id="pf2" class="text-left mb-4 mt-2 text-left mb-4 text-Red hidden">This field is required</p>
   </div>
 </div>
-  <label for="email" class=" text-base block text-left mb-2 text-gray-600 font-medium">Email Address  <span class="asterisco">*</span></label>
-  <input type="email" id="email" name="email"  class="email  mb-2 py-3  block rounded-lg bg-White border border-Grey-medium border-solid border-1"/>
-    <p class="text-Red hidden">Please enter a valid email address</p>
-    <p class="text-Red hidden">This field is required</p>
+  <label for="email" class=" text-base block text-left mb-2 text-gray-600 font-semibold">Email Address  <span class="asterisco">*</span></label>
+  <input type="email" id="email" name="email"  class="email  mb-4 py-3  block rounded-lg bg-White border border-Grey-medium border-solid border-1"/>
+    <p id="pf3" class="text-left mb-4  text-Red hidden">Please enter a valid email address</p>
+    <p id="pf4" class="text-left mb-4 text-left text-Red hidden mb-4">This field is required</p>
 
-  <label class="text-base block text-left  mb-4 text-gray-600 font-medium" for="">Query Type <span class="asterisco">*</span></label>
+  <label class="text-base block text-left  mb-4 text-gray-600 font-semibold" for="">Query Type <span class="asterisco">*</span></label>
   <div class=" lg:flex ">
-  <div class="gral  text-left pl-10 py-3 rounded-lg bg-White border border-Grey-medium border-solid border-1 mb-4 text-gray-600 font-medium ">
+  <div class="gral  text-left pl-10 py-3 rounded-lg bg-White border border-Grey-medium border-solid border-1 mb-4 text-gray-600 font-semibold">
     <input  type="radio" name="query_type" class=" py-2 px-10 relative right-1 " id="generalEnquiry" onchange="applyStyles(this)"/>  <label for="generalEnquiry">  General Enquiry</label>
 
   </div>
-  <div class="support  py-3 text-left pl-10 py-3 rounded-lg bg-White border border-Grey-medium border-solid border-1 mb-4 text-gray-600 font-medium ">
+  <div class="support  py-3 text-left pl-10 py-3 rounded-lg bg-White border border-Grey-medium border-solid border-1 mb-4 text-gray-600 font-semibold">
     <input  type="radio" name="query_type" class="py-2 relative right-1 " id="supportRequest" onchange="applyStyles(this)"/>  <label for="supportRequest">  Support Request</label>
   </div>
 </div>
-  <p class="text-Red hidden">Please select a query type</p>
+  <p id="pf5" class="text-left mb-4  text-Red hidden">Please select a query type</p>
 
-  <label class="text-base block text-left text-gray-600 font-medium mb-2 mt-6 " for="msj">Message <span class="asterisco">*</span></label>
+  <label class="text-base block text-left text-gray-600 font-semibold mb-2 mt-6 " for="msj">Message <span class="asterisco">*</span></label>
   <textarea id="msj" name="msj" class="msj  w-11/12  rounded-lg bg-White border border-Grey-medium border-solid border-1"></textarea>
-  <p class="text-Red hidden">This field is required</p>
+  <p id="pf6" class="text-left mb-4  text-Red hidden">This field is required</p>
   <div class="check">
-  <input type="checkbox" class=" relative top-7 left-2 block text-left text-gray-600 font-medium mb-2 mt-2 pl-2 " >  <span class="p1 relative left-10 bottom-3 break-normal text-gray-600 font-medium">I consent to being contacted by </span> <span class="p2 text-gray-600 font-medium relative top-2 right-48">the team <span class="asterisco">*</span></span></input>
-  <p class="text-Red hidden">To submit this form, please consent to being contacted</p>
+  <input id=check type="checkbox" class=" relative top-7 left-2 block text-left text-gray-600 font-semibold mb-2 mt-2 pl-2 " >  <span class="p1 relative left-10 bottom-3 break-normal text-gray-600 font-semibold">I consent to being contacted by </span> <span class="p2 text-gray-600 font-semibold relative top-2 right-48">the team <span class="asterisco">*</span></span></input>
+  <p id="pf7" class="ml-2  text-left mb-4  text-Red hidden">To submit this form, please consent to being contacted</p>
   </div>
-  <input type="submit" value=Submit class="submit  font-medium mt-10 mb-4 rounded-lg py-3 text-White block bg-Green-medium mx-auto px-24 " />
-  
+  <button id="submit" type="submit"  class="submit  font-medium  rounded-lg  text-White block bg-Green-medium  " >
+    Submit</button>
   <!--ALERT Message Sent!
   Thanks for completing the form. We'll be in touch soon!-->
 </form>
