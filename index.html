@@ -11,32 +11,106 @@
   <style>
     .attribution { font-size: 11px; text-align: center; }
     .attribution a { color: hsl(228, 45%, 44%); }
+
+@media (min-width:390px) and (max-width:600px){
+  
+  .gral{
+    width:87.9%;
+  }
+  .support{
+    width:87.9%;
+  }
+  .msj{
+    width:87%;
+    position: relative;
+    left:-0.6rem;
+  }
+}
+
+@media (min-width:768px) {
+  .gral{
+    width:95%;
+  }
+  .support{
+    width:95%;
+  }
+}
+@media (min-width:1440px) {
+  .gral{
+    width:46.5%;
+    margin-right:1.5rem;
+  }
+  .support{
+    width:46.5%;
+  }
+  .msj{
+    width:97%;
+  }
+  .email{
+    width:97%;
+  }
+  .nombre{
+    margin-right:1rem;
+    width:93%;
+  }
+  .apellido{
+    width:93%;
+  }
+  .form{
+    width:46rem;
+    padding-bottom:1.4rem;
+  }
+  .first{ 
+    width:90%;
+  }
+  .second{
+    width:90%;
+  }
+
+  .p1{
+    position: relative;
+    left:-9.9rem;
+    top:-0.05rem;
+  }
+  .p2{
+    position: relative;
+    left:-9.9rem;
+    top:-0.05rem;
+  }
+  .submit{
+    position: relative;
+    right:0.75rem;
+    width:97%;
+  }
+}
   </style>
 </head>
 <body class="bg-Green-lighter lg:flex lg:justify-center lg:items-center">
-<form class="lg:w-6/12 lg:m-14   rounded-lg relative pt-4 pb-1 pl-6 ml-4 mr-4 mt-6 bg-White mx-auto text-center">
+<form class="form rounded-lg relative pt-4 pb-1 pl-6 ml-4 mr-4 mt-6 bg-White mx-auto text-center">
   <h2 class="text-3xl font-medium text-left pb-6 text-gray-800">Contact Us</h2>
-  <div class="lg:visible lg:flex lg:justify-center lg:items-center">
-  <label for="firstname" class=" lg:w-full block text-base text-left mb-2 text-gray-600 font-medium">First Name  <span class="text-Grey-darker">*</span></label>
-  <input type="text"  id="firstname" name="firstname" class="lg:inline lg:w-1/2 py-3 px-14 rounded-lg block bg-White border border-Grey-medium border-solid border-1"/>
+  <div class="contenedor lg:visible lg:flex lg:justify-center lg:items-center">
+  <div class="first">
+  <label for="firstname" class="block text-base text-left mb-2 text-gray-600 font-medium">First Name  <span class="text-Grey-darker">*</span></label>
+  <input type="text"  id="firstname" name="firstname" class="nombre py-3 px-14 rounded-lg block bg-White border border-Grey-medium border-solid border-1"/>
     <p class="text-Red hidden">This field is required</p>
-
+  </div>
+  <div class="second">
   <label for="lastname" class=" text-base block text-left mb-2 text-gray-600 font-medium">Last Name  <span class="text-Grey-darker">*</span></label>
-  <input type="text" id="lastname" name="lastname" class="lg:w-1/2 lg:inline py-3 px-14  rounded-lg block bg-White border border-Grey-medium border-solid border-1"/>
+  <input type="text" id="lastname" name="lastname" class="apellido py-3 px-14  rounded-lg block bg-White border border-Grey-medium border-solid border-1"/>
     <p class="text-Red hidden">This field is required</p>
-  
+  </div>
 </div>
-  <label for="email" class="email text-base block text-left mb-2 text-gray-600 font-medium">Email Address  <span class="text-Grey-darker">*</span></label>
-  <input type="email" id="email" name="email"  class=" lg:w-11/12 lg:pr-4  mb-2 py-3 px-14 block rounded-lg bg-White border border-Grey-medium border-solid border-1"/>
+  <label for="email" class=" text-base block text-left mb-2 text-gray-600 font-medium">Email Address  <span class="text-Grey-darker">*</span></label>
+  <input type="email" id="email" name="email"  class="email  mb-2 py-3 px-14 block rounded-lg bg-White border border-Grey-medium border-solid border-1"/>
     <p class="text-Red hidden">Please enter a valid email address</p>
     <p class="text-Red hidden">This field is required</p>
 
   <label class="text-base block text-left  mb-4 text-gray-600 font-medium" for="">Query Type <span class="text-Grey-darker">*</span></label>
   <div class=" lg:flex ">
-  <div class="lg:w-1/2 lg:mr-4 w-11/12 text-left pl-10 py-3 rounded-lg bg-White border border-Grey-medium border-solid border-1 mb-4 text-gray-600 font-medium ">
+  <div class="gral  text-left pl-10 py-3 rounded-lg bg-White border border-Grey-medium border-solid border-1 mb-4 text-gray-600 font-medium ">
     <input  type="radio" name="query_type" class=" py-2 px-10 relative right-1 "  /> General Enquiry</input>
   </div>
-  <div class="lg:w-1/2 lg:mr-10 w-11/12 py-3 text-left pl-10 py-3 rounded-lg bg-White border border-Grey-medium border-solid border-1 mb-4 text-gray-600 font-medium ">
+  <div class="support  py-3 text-left pl-10 py-3 rounded-lg bg-White border border-Grey-medium border-solid border-1 mb-4 text-gray-600 font-medium ">
     <input  type="radio" name="query_type" class="py-2 relative right-1 "  /> Support Request</input>
   </div>
 </div>
@@ -45,17 +119,17 @@
   <label class="text-base block text-left text-gray-600 font-medium mb-2 mt-6 " for="msj">Message <span class="text-Grey-darker">*</span></label>
   <textarea id="msj" name="msj" class="msj  w-11/12 mr-6 py-24 lg:py-10 mb-4 rounded-lg bg-White border border-Grey-medium border-solid border-1"></textarea>
   <p class="text-Red hidden">This field is required</p>
-
-  <input type="checkbox" class="relative top-7 left-2 block text-left text-gray-600 font-medium mb-2 mt-2 pl-2 " >  <span class="relative left-10 bottom-3 break-normal text-gray-600 font-medium">I consent to being contacted by </span> <span class="text-gray-600 font-medium relative top-2 right-48">the team <span class="text-Grey-darker">*</span></span></input>
+  <div class="check">
+  <input type="checkbox" class="relative top-7 left-2 block text-left text-gray-600 font-medium mb-2 mt-2 pl-2 " >  <span class="p1 relative left-10 bottom-3 break-normal text-gray-600 font-medium">I consent to being contacted by </span> <span class="p2 text-gray-600 font-medium relative top-2 right-48">the team <span class=" text-Grey-darker">*</span></span></input>
   <p class="text-Red hidden">To submit this form, please consent to being contacted</p>
-
-  <input type="submit" value=Submit class="lg:w-11/12 lg:ml-4 font-medium mt-10 mb-4 rounded-lg py-3 text-White block bg-Green-medium mx-auto px-24 " />
-  <!--Message Sent!
+  </div>
+  <input type="submit" value=Submit class="submit font-medium mt-10 mb-4 rounded-lg py-3 text-White block bg-Green-medium mx-auto px-24 " />
+  <!--ALERT Message Sent!
   Thanks for completing the form. We'll be in touch soon!-->
 </form>
-  <div class="attributionk lg:hidden ">
+  <div class="attributionk lg:hidden text-center">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
+    Coded by <a href="#">Hector</a>.
   </div>
 </body>
 </html>
