@@ -12,49 +12,144 @@
     .attribution { font-size: 11px; text-align: center; }
     .attribution a { color: hsl(228, 45%, 44%); }
 
-@media (min-width:390px) and (max-width:600px){
+    input, textarea {
+    /* Resetear estilos preestablecidos porque aparecia un negro de borde en el focus de la nada */
+    outline: none;
   
+    }
+ 
+   
+
+.asterisco{
+  color:hsl(186, 25%, 41%);
+  margin-left:0.3rem;
+}
+
+.nombre:hover, .apellido:hover, .email:hover, .msj:hover{
+    border:0.1rem solid hsl(169, 82%, 27%);
+  }
+
+  .nombre:focus, .apellido:focus, .email:focus, .msj:focus{
+    border:0.1rem solid hsl(169, 82%, 27%);
+  }
+/*  .check input[type="checkbox"]:not(:checked) ~ .text-Red {
+  display: none;
+}
+
+
+.check input[type="checkbox"]:checked ~ .text-Red {
+  display: block;
+  color: red; 
+}*/
+
+
+
+
+@media (min-width:390px) and (max-width:600px){
+  .nombre{
+    padding-left: 1rem;
+    width: 94%;
+  }
+  .apellido{
+    width: 94%;
+    padding-left: 1rem;
+  }
+  .email{
+    width: 94%;
+    padding-left: 1rem;
+  }
   .gral{
-    width:87.9%;
+    width: 94%;
   }
   .support{
-    width:87.9%;
+    width: 94%;
   }
   .msj{
-    width:87%;
+    width: 94%;
     position: relative;
-    left:-0.6rem;
+    left:-0.59rem;
+    padding-bottom:13.2rem;
+    padding-left: 1rem;
+    padding-top: 1rem;
   }
 }
 
 @media (min-width:768px) {
+  .nombre{
+    width:95%;
+    padding-left: 1rem;
+  }
+  .apellido{
+    width:95%;
+    padding-left: 1rem;
+  }
+  .email{
+    width:95%;
+    padding-left: 1rem;
+  }
   .gral{
     width:95%;
   }
   .support{
     width:95%;
+  }
+  .msj{
+    position: relative;
+    right:1.1rem;
+    width:95%;
+    padding-top: 1rem;
+    padding-bottom: 4rem;
+    padding-left: 1rem;
+  }
+  .p1{
+    position: relative;
+    left:-9.9rem;
+    top:-0.05rem;
+    cursor:pointer;
+  }
+  .p2{
+    position: relative;
+    left:-9.9rem;
+    top:-0.05rem;
+    cursor:pointer;
   }
 }
-@media (min-width:1440px) {
+@media (min-width:1100px) {
+  input:focus{
+    
+    padding-left: 1rem;
+    }
+
+    
+
   .gral{
-    width:46.5%;
+    width:46.7%;
     margin-right:1.5rem;
+    cursor:pointer;
   }
   .support{
-    width:46.5%;
+    width:46.7%;
+    cursor:pointer;
   }
   .msj{
     width:97%;
+    position: relative;
+    right:0.8rem;
   }
   .email{
     width:97%;
+  
+    cursor:pointer;
   }
   .nombre{
     margin-right:1rem;
     width:93%;
+    cursor:pointer;
   }
+  
   .apellido{
     width:93%;
+    cursor:pointer;
   }
   .form{
     width:46rem;
@@ -62,25 +157,33 @@
   }
   .first{ 
     width:90%;
+    cursor:pointer;
   }
   .second{
     width:90%;
+    cursor:pointer;
   }
 
   .p1{
     position: relative;
     left:-9.9rem;
     top:-0.05rem;
+    cursor:pointer;
   }
   .p2{
     position: relative;
     left:-9.9rem;
     top:-0.05rem;
+    cursor:pointer;
   }
   .submit{
     position: relative;
     right:0.75rem;
     width:97%;
+    cursor:pointer;
+  }
+  .contenedor{
+    margin-bottom:1rem;
   }
 }
   </style>
@@ -90,40 +193,42 @@
   <h2 class="text-3xl font-medium text-left pb-6 text-gray-800">Contact Us</h2>
   <div class="contenedor lg:visible lg:flex lg:justify-center lg:items-center">
   <div class="first">
-  <label for="firstname" class="block text-base text-left mb-2 text-gray-600 font-medium">First Name  <span class="text-Grey-darker">*</span></label>
-  <input type="text"  id="firstname" name="firstname" class="nombre py-3 px-14 rounded-lg block bg-White border border-Grey-medium border-solid border-1"/>
+  <label for="firstname" class="block text-base text-left mb-2 text-gray-600 font-medium">First Name  <span class="asterisco">*</span></label>
+  <input type="text"  id="firstname" name="firstname" class="nombre py-3 rounded-lg block bg-White border border-Grey-medium border-solid border-1"/>
     <p class="text-Red hidden">This field is required</p>
   </div>
   <div class="second">
-  <label for="lastname" class=" text-base block text-left mb-2 text-gray-600 font-medium">Last Name  <span class="text-Grey-darker">*</span></label>
-  <input type="text" id="lastname" name="lastname" class="apellido py-3 px-14  rounded-lg block bg-White border border-Grey-medium border-solid border-1"/>
+  <label for="lastname" class=" text-base block text-left mb-2 text-gray-600 font-medium">Last Name  <span class="asterisco">*</span></label>
+  <input type="text" id="lastname" name="lastname" class="apellido py-3   rounded-lg block bg-White border border-Grey-medium border-solid border-1"/>
     <p class="text-Red hidden">This field is required</p>
   </div>
 </div>
-  <label for="email" class=" text-base block text-left mb-2 text-gray-600 font-medium">Email Address  <span class="text-Grey-darker">*</span></label>
-  <input type="email" id="email" name="email"  class="email  mb-2 py-3 px-14 block rounded-lg bg-White border border-Grey-medium border-solid border-1"/>
+  <label for="email" class=" text-base block text-left mb-2 text-gray-600 font-medium">Email Address  <span class="asterisco">*</span></label>
+  <input type="email" id="email" name="email"  class="email  mb-2 py-3  block rounded-lg bg-White border border-Grey-medium border-solid border-1"/>
     <p class="text-Red hidden">Please enter a valid email address</p>
     <p class="text-Red hidden">This field is required</p>
 
-  <label class="text-base block text-left  mb-4 text-gray-600 font-medium" for="">Query Type <span class="text-Grey-darker">*</span></label>
+  <label class="text-base block text-left  mb-4 text-gray-600 font-medium" for="">Query Type <span class="asterisco">*</span></label>
   <div class=" lg:flex ">
   <div class="gral  text-left pl-10 py-3 rounded-lg bg-White border border-Grey-medium border-solid border-1 mb-4 text-gray-600 font-medium ">
-    <input  type="radio" name="query_type" class=" py-2 px-10 relative right-1 "  /> General Enquiry</input>
+    <input  type="radio" name="query_type" class=" py-2 px-10 relative right-1 " id="generalEnquiry" onchange="applyStyles(this)"/>  <label for="generalEnquiry">  General Enquiry</label>
+
   </div>
   <div class="support  py-3 text-left pl-10 py-3 rounded-lg bg-White border border-Grey-medium border-solid border-1 mb-4 text-gray-600 font-medium ">
-    <input  type="radio" name="query_type" class="py-2 relative right-1 "  /> Support Request</input>
+    <input  type="radio" name="query_type" class="py-2 relative right-1 " id="supportRequest" onchange="applyStyles(this)"/>  <label for="supportRequest">  Support Request</label>
   </div>
 </div>
   <p class="text-Red hidden">Please select a query type</p>
 
-  <label class="text-base block text-left text-gray-600 font-medium mb-2 mt-6 " for="msj">Message <span class="text-Grey-darker">*</span></label>
-  <textarea id="msj" name="msj" class="msj  w-11/12 mr-6 py-24 lg:py-10 mb-4 rounded-lg bg-White border border-Grey-medium border-solid border-1"></textarea>
+  <label class="text-base block text-left text-gray-600 font-medium mb-2 mt-6 " for="msj">Message <span class="asterisco">*</span></label>
+  <textarea id="msj" name="msj" class="msj  w-11/12  rounded-lg bg-White border border-Grey-medium border-solid border-1"></textarea>
   <p class="text-Red hidden">This field is required</p>
   <div class="check">
-  <input type="checkbox" class="relative top-7 left-2 block text-left text-gray-600 font-medium mb-2 mt-2 pl-2 " >  <span class="p1 relative left-10 bottom-3 break-normal text-gray-600 font-medium">I consent to being contacted by </span> <span class="p2 text-gray-600 font-medium relative top-2 right-48">the team <span class=" text-Grey-darker">*</span></span></input>
+  <input type="checkbox" class=" relative top-7 left-2 block text-left text-gray-600 font-medium mb-2 mt-2 pl-2 " >  <span class="p1 relative left-10 bottom-3 break-normal text-gray-600 font-medium">I consent to being contacted by </span> <span class="p2 text-gray-600 font-medium relative top-2 right-48">the team <span class="asterisco">*</span></span></input>
   <p class="text-Red hidden">To submit this form, please consent to being contacted</p>
   </div>
-  <input type="submit" value=Submit class="submit font-medium mt-10 mb-4 rounded-lg py-3 text-White block bg-Green-medium mx-auto px-24 " />
+  <input type="submit" value=Submit class="submit  font-medium mt-10 mb-4 rounded-lg py-3 text-White block bg-Green-medium mx-auto px-24 " />
+  
   <!--ALERT Message Sent!
   Thanks for completing the form. We'll be in touch soon!-->
 </form>
@@ -131,5 +236,6 @@
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>. 
     Coded by <a href="#">Hector</a>.
   </div>
+  <script src="script.js"></script>
 </body>
 </html>
