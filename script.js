@@ -31,23 +31,49 @@ let p5 = document.getElementById('pf5');
 let p6 = document.getElementById('pf6');
 let p7 = document.getElementById('pf7');
 
+const email = mail.value.trim(); 
+
+
+function isValidEmail(email) {
+
+const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+return emailRegex.test(email); 
+}
+
+function showErrorText() {
+
+    p3.style.display = 'block';
+}
+
+function hideErrorText() {
+
+p3.style.display = 'none'; 
+}
+
+
+
+mail.addEventListener('blur', () => {
+    const emailValue = mail.value.trim();
+
+    if (!isValidEmail(emailValue)) {
+        showErrorText(); 
+    } else {
+        hideErrorText(); 
+    }
+    if (emailValue === '') {
+        p4.style.display = 'block';
+    } else {
+        p4.style.display = 'none';
+    }
+});
+
+
 submit.addEventListener('click',(e)=>{
     e.preventDefault();
-     // Validación de campos aquí...
 
-     if (nombre.value.trim() === '' || apellido.value.trim() === '' || email.value.trim() === '' || !document.querySelector('input[name="query_type"]:checked') || !check.checked || msj.value.trim() === '') {
-    
-        toastr.error('Por favor completa todos los campos obligatorios');
-        return;
-    }
+    const emailValue = mail.value.trim();
 
-    // Mostrar toast de éxito después de enviar el formulario
-    //toastr.success('¡Mensaje enviado! Nos pondremos en contacto pronto.');
-    toastr.success(' Message Sent! Thanks for completing the form. We\'ll be in touch soon!');
-
-    // redirigir a otra página después de enviar el formulario 
-    // window.location.href = 'pagina-de-agradecimiento.html';
-
+// Validación de campos aquí...
 if(nombre.value.trim()==='' ){
     p1.style.display='block';
     px.style.display='none';
@@ -63,7 +89,7 @@ else{
     p2.style.display='none';
 }
 
-if(email.value.trim()==='' ){
+if(emailValue ==='' ){
     p4.style.display='block';
 }
 else{
@@ -91,6 +117,20 @@ if(msj.value.trim()==='' ){
 else{
     p6.style.display='none';
 }
+
+// Verificar si todos los campos obligatorios están completos y el correo es válido
+if (nombre.value.trim() !== '' &&
+apellido.value.trim() !== '' &&
+emailValue !== '' &&
+isValidEmail(emailValue) &&
+document.querySelector('input[name="query_type"]:checked') &&
+check.checked &&
+msj.value.trim() !== '') {
+
+// Aquí puedes proceder con el envío del formulario
+alert("Message Sent!\nThanks for completing the form. We\'ll be in touch soon!");
+}
+
 })
 
 
@@ -113,9 +153,9 @@ nombre.addEventListener('blur', ()=>{
         px.style.display='none'; 
         p0.style.display='none'; 
     }
-    if(nombre.value.trim()!='' && apellido.value.trim()==='' && p0.style.display=='none'){
+    if(nombre.value.trim()!='' && apellido.value.trim()==='' && p0.style.display=='block'){
         px.style.display='block '; 
-        p0.style.display='block'; 
+        p0.style.display='none'; 
     }
 })
 
@@ -146,6 +186,7 @@ apellido.addEventListener('blur', ()=>{
 })
 
 mail.addEventListener('blur', ()=>{
+
     if(mail.value.trim()===''){
     p4.style.display='block';
     }else{
@@ -187,23 +228,40 @@ check.addEventListener('blur', ()=>{
 })
 
 //biblioteca Toastr
-document.addEventListener('DOMContentLoaded', function() {
+/*
 // Inicializar Toastr
-toastr.options = {
+submit.addEventListener('click',(e)=>{
+    e.preventDefault();
+     // Validación de campos aquí...
+
+     if (nombre.value.trim() === '' || apellido.value.trim() === '' || email.value.trim() === '' || !document.querySelector('input[name="query_type"]:checked') || !check.checked || msj.value.trim() === '') {
+    
+        toastr.error('Por favor completa todos los campos obligatorios');
+        return;
+    }
+
+    // Mostrar toast de éxito después de enviar el formulario
+    //toastr.success('¡Mensaje enviado! Nos pondremos en contacto pronto.');
+    toastr.success(' Message Sent! Thanks for completing the form. We\'ll be in touch soon!');
+
+    // redirigir a otra página después de enviar el formulario 
+    // window.location.href = 'pagina-de-agradecimiento.html';
+    toastr.options = {
     closeButton: true, // Mostrar botón de cierre en el toast
     progressBar: true, // Mostrar barra de progreso
     preventDuplicates: true, // Evitar mostrar toasts duplicados
     positionClass: 'toast-top-right', // Posición del toast (arriba a la derecha)
     timeOut: 5000 // Tiempo de duración del toast (en milisegundos)
-};
+    };
 
-// Función para mostrar un toast de éxito
-function mostrarToastExito(mensaje) {
-    toastr.success(mensaje);
-}
+    // Función para mostrar un toast de éxito
+    function mostrarToastExito(mensaje) {
+        toastr.success(mensaje);
+    }
 
-// Función para mostrar un toast de error
-function mostrarToastError(mensaje) {
-    toastr.error(mensaje);
-}
+    // Función para mostrar un toast de error
+    function mostrarToastError(mensaje) {
+        toastr.error(mensaje);
+    }
 });
+*/
